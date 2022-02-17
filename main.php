@@ -49,7 +49,7 @@ while (True) {
         $raw = json_decode($r,true);
     }else{
         echo "{$red}[Error] {$cyan}Bad Internet connection" . PHP_EOL;
-        sleep(10);
+        sleep(5);
         continue;
     }
 
