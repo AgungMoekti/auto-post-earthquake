@@ -48,7 +48,7 @@ class Earthquake{
         $green="\033[1;32m";
         $yellow="\033[1;33m";
 
-        if( isset( $this->access_token )){
+        if( !isset( $this->access_token ) ){
             Die("{$red}[Error] {$green}Set the access token first". PHP_EOL);
         }
         
