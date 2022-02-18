@@ -39,10 +39,12 @@ if(isset($argv[1])){
 }else{
     $last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
 }
-echo "{$yellow}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
 
 // Alert
 echo "{$red}[Alert] {$cyan}Script Started!" . PHP_EOL;
+
+echo "{$yellow}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
+echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
 // Infinty Loops
 while (True) {
 
@@ -83,7 +85,8 @@ while (True) {
             'url' => $url_bmkg_pict . $pict,
             'access_token' => 'none']);
         echo "{$red}[Result] {$green}$final" . PHP_EOL;
+        echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
     }
     // echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
-    sleep(10);
+    sleep(60);
 }
