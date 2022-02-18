@@ -41,6 +41,8 @@ if(isset($argv[1])){
 }
 echo "{$yellow}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
 
+// Alert
+echo "{$red}[Alert] {$cyan}Script Started!" . PHP_EOL;
 // Infinty Loops
 while (True) {
 
@@ -49,6 +51,7 @@ while (True) {
         $raw = json_decode($r,true);
     }else{
         echo "{$red}[Error] {$cyan}Bad Internet connection" . PHP_EOL;
+        echo "{$red}[Error] {$cyan}Trying to reconnect" . PHP_EOL;
         sleep(5);
         continue;
     }
@@ -81,6 +84,6 @@ while (True) {
             'access_token' => 'none']);
         echo "{$red}[Result] {$green}$final" . PHP_EOL;
     }
-    echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
+    // echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
     sleep(10);
 }
