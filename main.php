@@ -44,7 +44,7 @@ if(isset($argv[1])){
 // Alert
 echo "{$red}[Alert] {$cyan}Script Started!" . PHP_EOL;
 
-echo "{$yellow}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
+echo "{$yellow}[Lastest] {$cyan}$last_earthquake || $last_earthquake_datetime" . PHP_EOL;
 echo "{$green}[Wait] {$cyan}Wait a new Earthquake" . PHP_EOL;
 // Infinty Loops
 while (True) {
