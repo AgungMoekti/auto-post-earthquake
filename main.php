@@ -68,7 +68,7 @@ while (True) {
         $last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
         $last_earthquake_datetime = $raw['Infogempa']['gempa']['DateTime'];
         echo "{$green}[New] {$cyan}Detected New Earthquake" . PHP_EOL;
-        echo "{$green}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
+        echo "{$yellow}[Lastest] {$cyan}$last_earthquake || $last_earthquake_datetime" . PHP_EOL;
 
         // Loop
         foreach ($raw['Infogempa']['gempa'] as $key => $value) {
