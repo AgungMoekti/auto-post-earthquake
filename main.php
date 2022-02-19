@@ -66,6 +66,7 @@ while (True) {
 
         // Set new lastest erathquake Date
         $last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
+        $last_earthquake_datetime = $raw['Infogempa']['gempa']['DateTime'];
         echo "{$green}[New] {$cyan}Detected New Earthquake" . PHP_EOL;
         echo "{$green}[Lastest] {$cyan}$last_earthquake" . PHP_EOL;
 
