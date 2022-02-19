@@ -35,9 +35,10 @@ $url_bmkg_pict = "https://data.bmkg.go.id/DataMKG/TEWS/";
 $raw = json_decode(curlGet($url_bmkg),true) or Die("{$red}[Error] {$green}No Internet Connection". PHP_EOL);
 // Lastest Earthquake
 if(isset($argv[1])){
-    $last_earthquake = $argv[1];
+    $last_earthquake_datetime = $argv[1];
 }else{
     $last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
+    $last_earthquake_datetime = $raw['Infogempa']['gempa']['DateTime'];
 }
 
 // Alert
@@ -59,7 +60,7 @@ while (True) {
     }
 
     // To Submit New Earthquake
-    if(isset($raw['Infogempa']['gempa']['Tanggal']) && $raw['Infogempa']['gempa']['Tanggal'] != $last_earthquake){
+    if($raw['Infogempa']['gempa']['Tanggal'] != $last_earthquake || $raw['Infogempa']['gempa']['DateTime'] != $last_earthquake_datetime ){
         // Make Sure The Message is empty
         $msg = "";
 
