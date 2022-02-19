@@ -37,10 +37,10 @@ $raw = json_decode(curlGet($url_bmkg),true) or Die("{$red}[Error] {$green}No Int
 if(isset($argv[1])){
     $last_earthquake_datetime = $argv[1];
 }else{
-    $last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
     $last_earthquake_datetime = $raw['Infogempa']['gempa']['DateTime'];
 }
-
+// Date
+$last_earthquake = $raw['Infogempa']['gempa']['Tanggal'];
 // Alert
 echo "{$red}[Alert] {$cyan}Script Started!" . PHP_EOL;
 
